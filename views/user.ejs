@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("includes/head.ejs")%>
+
+      <body>
+            <h1 class="h1">Here Are Users Record</h1>
+
+            <table>
+                  <tr class="head">
+                        <th>userID</th>
+                        <th>userEmail</th>
+                        <th>userName</th>
+                        <th>Edit User</th>
+                        <th>Delete User</th>
+
+                        <td>
+                              <form action="/user/new" method="get">
+                                    <button>Add New User</button>
+                              </form>
+                        </td>
+                  </tr>
+
+                  <%for(user of users){%>
+                        <tr>
+                              <td>
+                                    <%=user.id%>
+                              </td>
+                              <td class="email">
+                                    <%=user.email%>
+                              </td>
+                              <td class="name">
+                                    <%=user.username%>
+                              </td>
+
+                              <td>
+                                    <form action="/user/<%=user.id%>/edit">
+                                          <button>Edit UserName</button>
+                                    </form>
+                              </td>
+
+                              <td>
+                                    <form action="/user/<%=user.id%>/delete" method="get">
+                                          <button>Delete User</button>
+                                    </form>
+                              </td>
+                        </tr>
+                        <%}%>
+
+            </table>
+      </body>
+
+</html>

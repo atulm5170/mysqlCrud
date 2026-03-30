@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("includes/head.ejs")%>
+
+      <body>
+
+            <div class="container">
+                  <div class="card">
+                        <h1 class="h1">Edit The Form :</h1>
+                        <h2 class="h2">Email: <%=user.email%></h2>
+                        
+                        <form action="/user/<%=user.id%>?_method=PATCH" method="post">
+
+                              <textarea name="username"><%=user.username%></textarea><br><br>
+                              <input type="password" name="password" placeholder="Enter Your Password"><br><br>
+                              <button type="submit">Submit Form</button>
+
+                        </form>
+                  </div>
+            </div>
+
+      </body>
+
+</html>
